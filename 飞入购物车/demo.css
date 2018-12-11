@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.wrapper{
+    width: 100%;
+    height: 680px;
+    /* border: 1px solid #333; */
+}
+.wrapper ul{
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+}
+.wrapper .imgBox ul li{
+    display: inline-block;
+    height: 300px;
+    width: 300px;
+    margin-left: 20px;
+}
+.wrapper ul li img{
+    width: 100%;
+    height: 100%；
+}
+.wrapper button{
+    height: 35px;
+    width: 100px;
+    margin-left: 20px;
+    color: #fff;
+    font-weight: bold;
+}
+.wrapper .btn1{
+    background-color: #ed145b;
+}
+.wrapper .btn2{
+    background-color: #f40;
+}
+.rightBox{
+    position: fixed;
+    width: 40px;
+    height: 100%;
+    right: 0;;
+    top: 0;
+    background-color: #444851;
+}
+.rightBox .rightBox-ul{
+    margin-top: 100px;    
+}
+.rightBox .rightBox-ul li{
+    position: relative;
+    margin-top: 10px;
+}
+.rightBox .rightBox-ul li a{
+    display: block;
+    min-height: 40px;
+    width: 40px;
+    text-decoration: none;
+    /* border:1px solid black; */
+}
+.fir a{
+    background: url('./img/index.jpg') 0px 0px no-repeat;
+}
+.sec a i,
+.fif a i{
+    display: block;
+    height: 40px;
+    width: 40px;
+}
+.sec a i{
+    background: url('./img/index.jpg') 0px -60px no-repeat;
+}
+.sec .con{
+    width: 16px;
+    height: 48px;
+    color: #fff;
+    font-size: 14px;
+    margin: 5px 0 0 10px;
+}
+.sec span,
+.fif span{
+    display: block;
+    width: 21px;
+    height: 21px;
+    border-radius: 100%;
+    color: #fff;
+    text-align: center;
+    line-height: 21px;
+    margin: 16px 0 0 9px;
+}
+.sec span{
+    background-color: #ed145b;
+}
+.thir a{
+    background: url('./img/index.jpg') 0px -196px no-repeat;
+}
+.four a{
+    background: url('./img/index.jpg') 0px -248px no-repeat;
+}
+.fif a i{
+    background: url('./img/index.jpg') 0px -300px no-repeat;
+}
+.fif span{
+    background-color: #f40;
+}
+.six a{
+    background: url('./img/index.jpg') 0px -372px no-repeat;
+}
+.sev a{
+    background: url('./img/index.jpg') 0px -427px no-repeat;
+}
+.leftBox{
+    height: 35px;
+    width: 100px;
+    background-color: #444851;
+    position: absolute;
+    left: -120px;
+    top: 10px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 35px;
+    text-align: center;
+    display: none;
+}
+.fir-leftBox,
+.sev-leftBox{
+    height: 185px;
+    width: 270px;
+    /* border: 1px solid #cecece; */
+    position: absolute;
+    left: -282px;
+    top: 4px;
+    display: none; 
+}
+.fir-leftBox{
+    background: url('./img/4.jpg') 0px 0px no-repeat;
+    background-size: contain;
+}
+.sev-leftBox{
+    background: url('./img/3.jpg') 0px 0px no-repeat;
+    background-size: contain;
+    width: 165px;
+    height: -175px;
+}
+.show{
+    display: block;
+}

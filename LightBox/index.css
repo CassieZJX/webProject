@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.box {
+    width: 90%;
+    margin: 100px auto;
+}
+
+li {
+    display: inline-block;
+    width: 23%;
+    vertical-align: middle;
+}
+
+li img {
+    width: 100%;
+}
+
+.shadow {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.show {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.bigView {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    /* border: 1px solid red; */
+}
+
+.bigView img {
+    width: 100%;
+    height: 100%;
+    border: 5px solid #ccc;
+    border-radius: 5px;
+}
+
+.btnView .btn {
+    position: absolute;
+    top: 5%;
+    width: 40px;
+    height: 40px;
+}
+
+.btnView .btn-close {
+    background: url('img/删除 关闭 叉.svg') 100% 100% no-repeat;
+    top: 0;
+    right: 20px;
+}
+
+.btnView .btn-prev {
+    background: url('img/左-圆-填充.svg') 100% 100% no-repeat;
+    top: 45%;
+    left: 20px;
+}
+
+.btnView .btn-next {
+    background: url('img/右箭头.svg') 100% 100% no-repeat;
+    top: 45%;
+    right: 20px;
+}

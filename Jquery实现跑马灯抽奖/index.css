@@ -1,0 +1,64 @@
+body{
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin: 0 auto;
+    background: #efefef;
+}
+body,ul,li{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+}
+.box{
+    width: 759px;
+    height: 611px;
+    padding: 9px 0 0 11px;
+    background: #ccc;
+    margin: 20px auto;
+}
+.inbox{
+    position: relative;
+    width: 751px;
+    height: 569px;
+}
+#random_box li{
+    position: absolute;
+    display: block;
+    width: 146px;
+    height: 146px;
+    border: 1px solid #c7c5ca;
+    background: #fff;
+}
+.ok{
+    position: absolute;
+    top: 150px;
+    left: 150px;
+    cursor: pointer;
+    display: block;
+    width: 442px;
+    font-size: 48px;
+    height: 294px;
+    background: #c00;
+    color: #fff;
+    text-align: center;
+    line-height: 280px;
+}
+#random_1{left:0px;top: 0px}
+#random_2{left:148px;top: 0px}
+#random_3{left:296px;top: 0px}
+#random_4{left:444px;top: 0px}
+#random_5{left:592px;top: 0px}
+#random_6{left:592px;top: 148px}
+#random_7{left:592px;top: 298px}
+#random_8{left:592px;top: 446px}
+#random_9{left:444px;top: 446px}
+#random_10{left:296px;top: 446px}
+#random_11{left:148px;top: 446px}
+#random_12{left:0px;top: 446px}
+#random_13{left:0px;top: 298px}
+#random_14{left:0px;top: 148px}
+#random_box li.random_current{
+    border: 4px solid red;
+}

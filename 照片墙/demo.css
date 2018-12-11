@@ -1,0 +1,40 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+body{
+    background-color: #e8e3da;
+}
+.wrapper{
+    width: 100%;
+}
+#wrap-ul{
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    /* border: 1px solid black; */
+    margin: auto;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    perspective: 700px;
+}
+.wrapper li{
+    transform-style: preserve-3d;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    /* border: 1px solid #000; */
+}
+.box{
+    width: 100%;
+    height: 100%;
+    transform: scale(0.9);
+}
+img{
+    width: 100%;
+    height: 100%;
+}

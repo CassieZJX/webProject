@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>炫酷照片展示</title>
+    <link rel="stylesheet" href="demo.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #7b7b7b;
+        }
+
+        .wrapper {
+            width: 70%;
+            margin: 70px auto;
+            /* border: 1px solid black; */
+        }
+
+        .imgBox {
+            width: 50px;
+            height: 300px;
+            margin: 0 auto;
+            perspective: 700px;
+        }
+
+        .wrapper img {
+            height: 50px;
+            width: 50px;
+            float: left;
+        }
+
+        .wrapper .btn {
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            font-size: 16px;
+            color: #6c6c6c;
+            background-color: #0fc;
+            border-radius: 5px;
+            padding: 5px;
+            margin: 0 auto;
+            cursor: pointer;
+            font-weight: bolder;
+            box-shadow: 2px 2px 3px #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="imgBox">
+            <img src="./img/1.jpg" alt="">
+        </div>
+        <div class="btn">点击查看效果</div>
+    </div>
+    <script src="jquery.js"></script>
+    <script>
+        function Index() {
+            this.dom = {
+                img: $('img'),
+                btn: $('.btn')
+            }
+            this.bindEvent();
+        }
+        Index.prototype.bindEvent = function () {
+            var self = this;
+            var img = self.dom.img;
+            self.dom.btn.on('click', function () {
+                var endNum = 0;
+                //闭包 立即执行函数
+                setTimeout(function () {
+                    self.monition(img, '1s', function () {//图片变小 
+                        $(this).css({
+                            'transform': 'scale(0)'
+                        })
+                    }, function () {
+                        self.monition(this, '1s', function () {//图片变大
+                            $(this).css({
+                                'transform': 'scale(1)',
+                                'opacity': 0
+                            })
+                        }, function () {
+                            self.show();
+                        })
+                    });
+                }, Math.random() * 1000);
+            })
+        }
+        Index.prototype.show = function () {
+            var self = this;
+            var img = self.dom.img;
+            var allEnd = 0;
+            $(img).css({//在z轴上后移
+                'transition': '',
+                'transform': 'rotateY(0deg) translateZ(-' + Math.random() * 500 + 'px)'
+            });
+            setTimeout(function () {
+                self.monition(img, '2s', function () {
+                    $(this).css({//在Y轴上旋转360度
+                        'transform': 'rotateY(-360deg) translateZ(0)',
+                        'opacity': 1
+                    })
+                }, function () {//确保全部图片的动画完整后才能继续点击，当前动画 100% 完成之后执行
+                    allEnd++;
+                })
+            }, Math.random() * 1000);
+        }
+        Index.prototype.monition = function (dom, time, doFun, callBack) {
+            var self = this;
+            $(dom).css({
+                'transition': time  //动画改变时间
+            });
+            doFun.call(dom); //改变this指向
+            var called = true;
+            $(dom).on('transitionend', function () {  //过渡完
+                if (called) {
+                    callBack && callBack.call(dom);
+                    called = false;
+                }
+            })
+        }
+        new Index();
+    </script>
+</body>
+</html>

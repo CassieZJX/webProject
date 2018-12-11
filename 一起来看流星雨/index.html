@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>一起来看流星雨</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        
+
+        #can {
+            background: #000;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="can"></canvas>
+    <script>
+        var can = document.getElementById('can');
+        var ctx = can.getContext('2d');
+        var w = can.width = window.innerWidth;
+        var h = can.height = window.innerHeight;
+        var count = 30;
+        var drops = [];
+        window.onresize = function () {
+            w = can.width = window.innerWidth;
+            h = can.height = window.innerHeight;
+        }
+        function Drop() {
+
+        };
+        Drop.prototype = {
+            init: function () {
+                this.x = random(0, w)
+                this.y = 0;
+                this.r = 1;//半径
+                this.vy = random(4, 5);//水平竖直加速度
+                this.vr = 1;//半径加速度
+                this.a = 1;//初始透明度
+                this.va = 0.96;//透明度系数
+                this.l = random(h * 0.8, h * 0.9);//下落高度
+            },
+            draw: function () {
+                if (this.y > this.l) {
+                    //画圆
+                    ctx.beginPath();
+                    // ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2, false);
+                    ctx.ellipse(this.x,this.y,this.r+20,this.r,0,0,Math.PI*2);
+                    ctx.strokeStyle = "rgba(0,255,255," + this.a + ")";
+                    ctx.stroke();
+                } else {
+                    ctx.fillStyle = color(this.a);
+                    ctx.fillRect(this.x, this.y, 2, 10);
+                }
+                this.update();
+            },
+            //更新坐标
+            update:function(){
+                if(this.y<this.l){
+                    this.y+=this.vy;
+                }else{
+                    if(this.a>0.03){
+                        this.r+=this.vr;
+                        if(this.r>50){
+                            this.a*=this.va;
+                        }
+                    }else{
+                        this.init();
+                    }
+                }
+            }
+        }
+        setup();
+        move();
+        function setup(){
+            for(var i=0;i<count;i++){
+                (function(j){
+                    setTimeout(function(){
+                        var drop=new Drop();
+                        drop.init();
+                        drops.push(drop);
+                    },j*200);
+                    console.log(j)
+                }(i));
+            }
+        }
+        function move(){
+            ctx.fillStyle="rgba(0,0,0,0.1)";
+            ctx.fillRect(0,0,w,h);
+            for(var i=0;i<drops.length;i++){
+                drops[i].draw();
+            }
+            requestAnimationFrame(move);
+        }
+        
+        function random(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+        function color(a) {
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            return "rgba(" + r + "," + g + "," + b + "," + a + ")";
+        }
+    </script>
+</body>
+
+</html>

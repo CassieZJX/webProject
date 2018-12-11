@@ -1,0 +1,3 @@
+点击下一张时，对最后一张的处理
+ if (n > oLi.length) 不对，n>4
+换成 n >= oLi.length-1

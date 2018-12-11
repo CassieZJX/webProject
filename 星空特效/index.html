@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>星空特效</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            overflow: hidden;
+            background: #000;
+        }
+
+        #wrapper {
+            position: absolute;
+            top: 50px;
+            left: 80%;
+            width: 200px;
+            height: 200px;
+            animation: moonline 30s linear;
+            z-index: 999;
+        }
+
+        @keyframes moonline {
+            0% {
+                top: 220px;
+                left: 0%;
+                opacity: 0;
+            }
+            40% {
+                top: 100px;
+                left: 40%;
+                opacity: 0.5;
+            }
+            80% {
+                top: 50px;
+                left: 80%;
+                opacity: 1;
+            }
+        }
+
+        #circle {
+            width: 100%;
+            height: 100%;
+            background: #efefef;
+            border-radius: 100px;
+            box-shadow: 0 0 40px #fff;
+            animation: moonRight 30s linear;
+        }
+
+        @keyframes moonRight {
+            0% {
+                box-shadow: 0 0 0px #fff;
+            }
+            50% {
+                box-shadow: 0 0 20px #fff;
+            }
+            100% {
+                box-shadow: 0 0 40px #fff;
+            }
+        }
+
+        span {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            background: url('star.svg') no-repeat;
+            background-size: 100% 100%;
+            animation: flash 1s alternate infinite;
+        }
+
+        @keyframes flash {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        span:hover {
+            transform: scale(3, 3) rotate(180deg) !important;
+            transition: all 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="circle"></div>
+    </div>
+    <script>
+        window.onload = function () {
+            var width = document.documentElement.clientWidth;
+            var height = document.documentElement.clientHeight;
+            for (var i = 0; i < 200; i++) {
+                var span = document.createElement('span');
+                document.body.appendChild(span);
+                var x = parseInt(Math.random() * width);
+                var y = parseInt(Math.random() * height);
+                span.style.top = y + 'px';
+                span.style.left = x + 'px';
+                span.style.zIndex = 0;
+                var scale = Math.random() * 1.5;
+                span.style.transform = "scale(" + scale + "," + scale + ")";
+                var rate = Math.random() * 1.5;
+                span.style.animationDelay = rate + "s";
+            }
+        }
+    </script>
+</body>
+
+</html>

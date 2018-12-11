@@ -1,0 +1,21 @@
+body{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle,#444,#000,#000);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#char{
+    font-size: 400px;
+    color: lightgreen;
+    text-shadow: 0 0 50px #666;
+}
+#result{
+    font-size: 20px;
+    color: #888;
+}
+#char.error{
+    color: red;
+}

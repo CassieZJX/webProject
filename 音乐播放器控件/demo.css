@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #a89b9b;
+}
+.player{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.player_nav{
+    display: flex;
+    align-items: center;
+    height: 100px;
+    background: white;
+    border-radius: 15px;
+    padding: 10px 25px;
+}
+.player_nav .player_CD{
+    position: relative;
+    top: -50%;
+    width: 112px;
+    height: 112px;
+    /* border: 1px solid red; */
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.player_nav .player_CD::before{
+    position: absolute;
+    content: '';
+    background: #fff;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 10;
+}
+.player_nav .player_CD.play::after{
+    position: absolute;
+    content: '';
+    border-radius: 50%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    box-shadow: 0 30px 28px -10px rgba(0, 0, 0, 0.2); 
+}
+.player_CD .player_cdData{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: none;
+}
+.player_CD .player_cdData.active_song{
+    display: block;
+}
+.method{
+    position: absolute;
+    bottom: 5px;
+}
+.method .singleloop{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.player_nav .player_control{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;/* 平均分布时留白 */
+}
+.player_control>div{
+    width: 80px;
+    height: 80px;
+    /* border: 1px solid red;   */
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer; 
+    transition: all 0.2s ease-in-out; 
+}
+.player_control>div:hover{
+    background: rgba(229, 232, 236,0.6);
+}
+.player_control img{
+    width: 2em;
+    height: 2em;
+}
+.player_play .pause{
+    display: none;
+}
+.player_play.start .play{
+    display: none;
+}
+.player_play.start .pause{
+    display: block;
+}
+
+.play_timeLineBar{
+    position: absolute;
+    width: 230px;
+    height: 4px;
+    right: 20px;
+    bottom: 15px;
+    background: #d7dce2;
+}
+.play_timeLineBar .player_duration{
+    width: 0;
+    height: 100%;
+    background: #64aef3;
+}
+.back_Mask{
+    position: absolute;
+    width: 90%;
+    height: 100%;
+    background: #64d5f3cc;
+    top: 0%;
+    left: 5%;
+    border-radius: 15px;
+    text-align: center;
+    z-index: -1;
+    font-size: 20px;
+}
+

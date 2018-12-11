@@ -1,0 +1,9 @@
+1.使用jq和js的结果
+var imageBtn=document.getElementsByClassName('image-buttons')[0],
+        cube=document.getElementsByClassName('cube')[0],
+        currentClassName=cube.classList[1];
+        imageBtn.addEventListener('click',function(e){
+//一开始用jq的方法imageBtn=$('.image-buttons')
+                cube=$('.cube')
+结果找不到cube.classList[1];
+而且控制台显示imageBtn.addEventListener is not a function

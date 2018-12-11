@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body,html{
+            width: 100%;
+            height: 100%;
+        }
+        .box{
+            width: 490px;
+            height: 340px;
+            margin: auto;
+            border: 1px solid #000;
+            position: relative;
+        }
+        .item{
+            float: left;
+            width: 150px;
+            height: 100px;
+            margin: 5px;
+            border-radius: 5px;
+            background: goldenrod;;
+            border: 1px solid lightgray;
+            z-index: 1;
+            text-align: center;
+            cursor: move;
+        }
+        .item img{
+            width: 100%;
+            height: 100%;
+        }
+        div.moving{
+            border: 1px dashed gray;
+            background: white;
+        }
+        div.draging{
+            width: 150px;
+            height: 100px;
+            position: absolute;
+            background: goldenrod;
+            box-shadow: 0 0 2px 2px #555;
+            border-radius: 5px;
+            z-index: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="item"><img src="img/pic1.jpg" alt=""></div>
+        <div class="item"><img src="img/pic2.jpg" alt=""></div>
+        <div class="item"><img src="img/pic3.jpg" alt=""></div>
+        <div class="item"><img src="img/pic4.jpg" alt=""></div>
+        <div class="item"><img src="img/pic5.jpg" alt=""></div>
+        <div class="item"><img src="img/pic6.jpg" alt=""></div>
+        <div class="item"><img src="img/pic7.jpg" alt=""></div>
+        <div class="item"><img src="img/pic8.jpg" alt=""></div>
+        <div class="item"><img src="img/pic9.jpg" alt=""></div>
+    </div>
+    <script src="jquery.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

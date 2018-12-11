@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+body{
+    background-color: #f0f0f0;
+}
+.shade{
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #7b7b7b;
+    opacity: 0.5;
+    z-index: -1;
+    display: none;
+}
+.wrapper{
+    width: 700px;
+    height: 600px;
+    /* border: 1px solid black; */
+    margin: 50px auto;
+}
+.wrapper h3{
+    text-align:center;
+    font-size:30px;
+    font-weight: 600;
+    color: #6c6c6c;
+}
+.wrapper .demo{
+    width: 600px;
+    height: 320px;
+    border-top: 3px dashed #cecece;
+    margin: 20px auto;
+}
+.wrapper .share{
+    text-decoration: none;
+    border-radius: 18px;
+    display: block;
+    width: 100px;
+    height: 30px;
+    border: 1px solid #cecece;
+    padding: 10px;
+    margin: 10px auto;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+.wrapper .box{
+    width: 380px;
+    height: 150px;
+    background-color: #fff;
+    border-radius: 20px;
+    margin: 10px auto;
+    z-index: 1000;
+    padding: 20px;
+    display: none;
+}
+.box .shareContent-top{
+    height: 30px;
+    width: 380px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}
+.box .shareContent-top span{
+    font-size: 16px;
+    font-weight: 600;
+    color: #84c017;
+}
+.box .shareContent-top .close{
+    float: right;
+    width: 30px;
+    height: 30px;
+    background: url('./img/叉.jpg') 0px 0px no-repeat;
+    background-size: 30px;
+}
+.box .shareContent-top .close:hover{
+    background-position: 0px -32px;
+}
+.box .shareContent{
+    padding: 20px;
+}
+.shareContent ul li{
+    float: left;
+    height: 50px;
+    width: 50px;
+    /* border: 1px solid black; */
+    position: relative;
+    cursor: pointer;
+}
+.shareContent ul li a{
+    display: block;
+    width: 28px;
+    height: 28px;
+    /* border: 1px solid red; */
+    margin-left: 11px;
+    margin-top: 12px;
+    background: url('./img/工具.jpg') 0px 0px no-repeat;
+    transition: all 0.3s ease-in-out;
+}
+.shareContent ul li:hover a{
+    margin-top: 2px;
+}
+.shareContent ul li span{
+    width: 40px;
+    height: 10px;
+    display: block;
+    background: url('./img/阴影.jpg') 0px 0px no-repeat;
+    opacity: 0.2;
+    position: absolute;
+    background-size: 40px;
+    bottom: 0;
+    left: 5px;
+}
+.shareContent ul li:hover span{
+    transition: all 0.3s ease-in-out;    
+    opacity: 0.1;
+}
+.shareContent ul li .qq{
+    background-position:0px 0px;
+}
+.shareContent ul li .weibo{
+    background-position:-28px 0px;
+}
+.shareContent ul li .renren{
+    background-position:-55px 0px;
+}
+.shareContent ul li .siyecao{
+    background-position:-84px 0px;
+}
+.shareContent ul li .bugongying{
+    background-position:-111px 0px;
+}
+.shareContent ul li .star{
+    background-position:-140px 0px;
+}

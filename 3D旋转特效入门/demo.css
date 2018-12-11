@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 0;
+}
+html{
+    font-size: 10px;
+}
+body{
+    background: #080808;
+    color: #fafafa;
+    text-align: center;
+}
+h2{
+    font-size: 4rem;
+    margin: 4rem;
+}
+.container{
+    position: relative;
+    width: 30rem;
+    height: 30rem;
+    margin: 6rem auto 5rem;
+}
+.container .cube{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.75s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.container .cube img{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.img1{
+    transform: translateZ(15rem);
+}
+.img2{
+    transform: rotateX(-180deg) translateZ(15rem);
+}
+.img3{
+    transform: rotateY(90deg) translateZ(15rem);
+}
+.img4{
+    transform: rotateY(-90deg) translateZ(15rem);
+}
+.img5{
+    transform: rotateX(90deg) translateZ(15rem);
+}
+.img6{
+    transform: rotateX(-90deg) translateZ(15rem);
+}
+.image-buttons{
+    display: grid;
+    grid-template-columns: 105px 105px 105px;/* 栅格的列 */
+    grid-template-rows: 85px 85px;/* 栅格的行 */
+    justify-content: center;/* 居中 */
+    grid-gap: 1.5rem;/* 间隙 */
+}
+.image-buttons input{
+    width: 105px;
+    outline: none;
+    border: 2px solid #fafafa; 
+}
+.image-buttons input:focus{
+    border: 2px solid #e70;
+}
+.cube.currentPosition{
+    transform: translateZ(-15rem) rotateX(-15deg) rotateY(15deg);
+}
+.cube.show-image-1{
+    transform: translateZ(-15rem);
+}
+.cube.show-image-2{
+    transform: rotateX(180deg) translateZ(-15rem);
+}
+.cube.show-image-3{
+    transform: rotateY(-90deg) translateZ(-15rem);
+}
+.cube.show-image-4{
+    transform: rotateY(90deg) translateZ(-15rem);
+}
+.cube.show-image-5{
+    transform: rotateX(-90deg) translateZ(-15rem);
+}
+.cube.show-image-6{
+    transform: rotateX(90deg) translateZ(-15rem);
+}

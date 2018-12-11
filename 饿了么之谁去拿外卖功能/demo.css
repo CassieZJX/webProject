@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: #333;
+    text-decoration: none;
+}
+
+body {
+    background: #f7f7f7;
+}
+
+.nav {
+    width: 90%;
+    height: 120px;
+    margin: 100px auto 0;
+    position: relative;
+    border: 1px solid #eee;
+}
+
+.nav .logo {
+    position: absolute;
+    display: block;
+    width: 186px;
+    height: 55px;
+    top: -50px;
+    right: 0;
+}
+
+.nav .logo img {
+    width: 100%;
+}
+
+.mask {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+}
+
+.container {
+    position: absolute;
+    width: 360px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.header {
+    height: 44px;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.header p {
+    float: left;
+}
+
+.header .close {
+    float: right;
+    color: #eee;
+    line-height: 24px;
+    width: 16px;
+}
+
+.header .close:hover {
+    color: blue;
+}
+
+.wapper {
+    margin: 0 auto;
+    width: 300px;
+    padding: 15px;
+}
+
+.wapper .inner {
+    margin: 0 auto;
+    padding-top:15px; 
+    font-size: 12px;
+    background: #dbf0fa;
+}
+
+.inner h3 {
+    width: 207px;
+    height: 199px;
+    margin: 0 auto;
+    background: url(img/ico.PNG) 0 -132px no-repeat;
+}
+
+.inner button {
+    display: block;
+    width: 271px;
+    height: 40px;
+    border: none;
+    background: url(img/ico.PNG) 0 0px no-repeat;
+    margin: -45px auto 15px;
+    cursor: pointer;
+}
+
+.textcontent {
+    position: relative;
+    text-align: center;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.textcontent::before {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 40px;
+    height: 7px;
+    background: #ccc;
+    left: 16px;
+    top: 5px;
+}
+.textcontent::after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 40px;
+    height: 7px;
+    background: #ccc;
+    right: 16px;
+    top: 5px;
+}
+ul{
+    height: 180px;
+    padding-left: 15px;
+    overflow: hidden;
+}
+ul li{
+    padding-left: 3px;
+    height: 20px;
+}
+ul .takeoutList{
+    background: url('img/ico.PNG') 0 -346px no-repeat;
+    font-weight: 700;
+    color: #fe5a23;
+}

@@ -1,0 +1,2 @@
+getElementsByClassName() 方法返回文档中所有指定类名的元素集合
+var prev = document.getElementsByClassName('prev')[0];一开始取不到

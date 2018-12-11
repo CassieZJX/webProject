@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #7b7b7b;
+}
+.wrapper{
+    width: 70%;
+    margin: 70px auto;
+    /* border: 1px solid black; */
+}
+.imgBox{
+    width: 500px;
+    height: 300px;
+    margin: 0 auto;
+    perspective: 700px;
+}
+.wrapper img{
+    height: 50px;
+    width: 50px;
+    float: left;
+}
+.wrapper .btn{
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 16px;
+    color: #6c6c6c;
+    background-color: #0fc;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0 auto;
+    cursor: pointer;
+    font-weight: bolder;
+    box-shadow: 2px 2px 3px #eee;
+}
