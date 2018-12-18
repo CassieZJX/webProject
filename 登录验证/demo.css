@@ -122,3 +122,8 @@ html,body{
     margin-right: 7px;
     vertical-align: middle;
 }
+@media screen and (max-width: 450px) {
+    .content {
+        transform: translateX(-50%) scale(0.6);
+    }
+}
