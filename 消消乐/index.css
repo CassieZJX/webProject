@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0
+}
+body,html{
+    width: 100%;
+    height: 100%;
+}
+#pop_star{
+    position: relative;
+    width: 500px;/* 每个小星星50px */
+    height: 100%;
+    margin:0 auto;
+    background: url('pic/background.png');
+    background-size: cover;
+    font-size: 0;/* 消灭每一个小星星间的空隙 */
+}
+#targetScore{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    font-size: 20px;
+}
+#nowScore{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    font-size: 20px;
+}
+#selectScore{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    font-size: 20px;
+    opacity: 0;
+}

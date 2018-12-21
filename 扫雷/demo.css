@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.wrapper{
+    position: fixed;
+    width: 100%;
+    height: 920px;
+    background: url('img/bg.PNG');
+    background-size: 100% 80%;
+}
+/* 开始游戏按钮 */
+.btn{
+    position: absolute;
+    top: 10px;
+    left: 50px;
+    width: 120px;
+    height: 60px;
+    background: url('img/startGame.PNG');
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+/* 游戏主界面，整片草地样式 */
+.box{
+    display: none;
+    width: 500px;
+    height: 500px;
+    margin: 20px auto;
+    transform: perspective(800px) rotateX(45deg);
+    border-left: 1px solid #b25f27;
+    border-top: 1px solid #b25f27;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+.flatBox{
+    position: absolute;
+    display: none;
+    width: 150px;
+    height: 40px;
+    /* 这里的height不能太大，否则会遮住下面的box，导致点击格子没有反应 */
+    top: 50px;
+    left: 50%;
+    margin-left: -100px;
+    color: #222;
+    font-size: 20px;
+    font-weight: bolder;
+}
+.score{
+    float: right;
+}
+/* 结果弹出样式 */
+.alert{
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0,0.2);
+}
+.alert .alertImg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 450px;
+    height: 250px;
+    background-size: 100% 100%;
+    border-radius: 20px;
+}
+.alert .alertImg .close{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 35px;
+    height: 35px;
+    background: url('img/closeBtn.PNG');
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+/* 小方块的样式 */
+.block{
+    width: 49px;
+    height: 49px;
+    float: left;
+    border-right: 1px solid #b25f27;
+    border-bottom: 1px solid #b25f27;
+    background: url('img/cao.PNG');
+    box-shadow: 0 0 4px #333 inset;
+}
+/* 添加地雷样式 */
+.show{
+    background: url('img/dilei.PNG');
+    background-size: 100% 100%;
+}
+/* 显示周围地雷数的样式 */
+.num{
+    background: #ecd0a1;
+    font-size: 18px;
+    text-align: center;
+    line-height: 49px;
+    font-weight: bold;
+    color: #222;
+}
+/* 插旗的样式 */
+.flag{
+    background: url('img/hongqi.PNG');
+    background-size: 100% 100%;
+}

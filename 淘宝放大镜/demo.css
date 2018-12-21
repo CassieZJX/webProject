@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+body{
+    background-color: #fff;
+}
+.wrapper{
+    margin: 50px auto;
+    position: relative;
+    width: 500px;
+    background-color: #fff;
+    /* border: 1px solid black; */
+}
+.content{
+    width: 100%;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+.imgCov{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.imgCov img{
+    position: absolute;
+}
+.moveView{
+    position: absolute;
+    background: url('./img/move-box.png');
+    cursor: move;
+}
+.bottomBox{
+    height: 92px;
+    min-width: 500px;
+    border: 1px solid #eee;
+    overflow: hidden;
+}
+.bottomBox ul{
+    height: 100px;
+    position: relative;
+    left: 0;
+}
+.bottomBox ul li{
+    float: left;
+    width: 100px;
+    cursor: pointer;
+}
+.bottomBox ul li div{
+    padding: 1px;
+    height: 78px;
+    margin: 5px;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bottomBox ul li div img{
+    width: 100%;
+    height: 100%;
+}
+.bottomBox ul .active div{
+    border: 1px solid #000;
+}
+.bigView{
+    height: 500px;
+    width: 500px;
+    position: absolute;
+    left: 105%;
+    top: 0;
+    z-index: 99;
+    background-color: #fff;
+    display: none;
+    overflow: hidden;
+}

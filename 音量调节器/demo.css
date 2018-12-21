@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: hsl(194, 64%, 49%)/* 色调 饱和度 亮度 */
+}
+.wrapper{
+    width: 70%;
+    height: 500px;
+    margin: 50px auto;
+    position: relative;
+}
+.title{
+ color: #fff;
+ font-size: 20px;
+ font-weight: bolder;
+ margin: 20px;   
+}
+.circle{
+    width: 20%;
+    padding-top: 20%;/* 内容撑起高度 */
+    border-radius: 50%;
+    position: absolute;
+    left: 30%;
+    top: 30%;
+    /* border: 1px solid #000; */
+}
+.sun{
+    background-color: #ff7;
+    box-shadow: 0 0 50px #ff7;
+}
+.moon{
+    left: 52%;
+    cursor: pointer;
+    box-shadow: inset 5px 5px 50px rgba(255,255,119,0.3); /* inser内阴影 */
+}
+.per{
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-weight: bolder;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>canvas鼠标炫酷跟随效果</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        body,
+        html {
+            overflow: hidden;
+        }
+        canvas {
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas"></canvas>
+    <script>
+        //某一个点 画圆(move-x,y，固定半径，随机颜色)
+        //扩散  基于鼠标移动随机位置的圆
+        //透明度 if(opcity<0.1 圆消失)
+
+        //取到画布
+        var myCanvas = document.getElementById('myCanvas');
+        //创建画笔
+        var ctx = myCanvas.getContext('2d');
+        var starList = [];
+        init();
+        //设置canvas区域的大小
+        function init() {
+            myCanvas.width = window.innerWidth;
+            myCanvas.height = window.innerHeight;
+        }
+        //监听屏幕区域大小改变
+        myCanvas.onresize = init;
+        //绑定鼠标移动事件
+        myCanvas.addEventListener('mousemove', function (e) {
+            starList.push(new Star(e.offsetX, e.offsetY));
+        });
+        //随机函数
+        function random(min, max) {
+            return Math.floor((min + max) * Math.random() + min);
+        }
+        //构造函数
+        function Star(x, y) {
+            //将坐标存在每一个点的对象上
+            this.x = x;
+            this.y = y;
+            //初始透明度
+            this.opacity = 1;
+            //初始颜色
+            this.color = 'rgb(' + random(0, 256) + ',' + random(0, 256) + ',' + random(0, 256) + ')';
+            //偏移量
+            this.vx = (Math.random() - 0.5) * 3;
+            this.vy = (Math.random() - 0.5) * 3;
+            // this.draw();
+        }
+        Star.prototype = {
+            //根据数组中的每一个元素中存着的信息进行绘画
+            draw: function () {
+                ctx.beginPath();
+                //圆的颜色
+                ctx.fillStyle = this.color;
+                //透明度
+                ctx.globalAlpha = this.opacity;
+                //覆盖部分颜色混合
+                ctx.globalCompositeOperation = "lighter";
+                //画圆
+                ctx.arc(this.x, this.y, 30, 0, Math.PI * 2, false)//圆心，半径，起始角，结束角，顺时针
+                ctx.fill();
+                this.update();
+            },
+            update:function(){
+                this.x+=this.vx;
+                this.y+=this.vy;
+                this.opacity*=0.98;
+            }
+
+        }
+        //渲染
+        function render() {
+            //清空画布
+            ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
+            starList.forEach(function (ele, index) {
+                ele.draw();
+                if(ele.opacity<0.05){
+                    starList.splice(index,1);
+                }
+            });
+            //每隔一个屏幕刷新频率的时间调用函数
+            requestAnimationFrame(render);
+        }
+        render();
+    </script>
+</body>
+</html>

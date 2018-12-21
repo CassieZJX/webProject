@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #fde3a7;
+    font-family: 'Indie Floewr',cursive;
+}
+.card{
+    width: 400px;
+    /* height: 400px; */
+    background-color: #e0e1dc;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-top: 100px;
+    margin-left: -200px;
+    transform-style: preserve-3d;
+    perspective: 2000px;
+    transition: all 1s;
+    /* 多重阴影，每个阴影通过用逗号分隔 */
+    box-shadow: inset 300px 0 50px rgba(0, 0, 0, .5),20px 0 60px rgba(0, 0, 0, .5)
+}
+/* 加厚 显示书的厚度 */
+.card::before{
+    content: "";
+    background-color: #bac1ba;
+    height: 5px;
+    width: 100%;
+    position: absolute;
+    top: -5px;
+    transform-origin: bottom;
+    transform: skewX(-45deg);
+}
+.card::after{
+    content: "";
+    background-color: #bac1ba;
+    width: 5px;
+    height: 100%;
+    position: absolute;
+    right: -5px;
+    top: 0;
+    transform-origin: left;
+    transform: skewY(-45deg);
+}
+.imgBox{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-origin: left;/* 不加这步，会从中间翻开 */
+    transition: 0.7s;
+}
+/* 为了翻开时展示背面 */
+.imgBox .bark{
+    background-color: #bac1ba;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.imgBox img{
+    width: 100%;
+}
+/* 未翻开时文字隐藏在下面 */
+.details{
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    opacity: 0;
+}
+.details h4{
+    font-size: 26px;
+    line-height: 40px;
+    color: #0b9e91; 
+    padding: 10px;   
+}
+.details .title1{
+    color: #ce7454;
+}
+.details p{
+    font-size: 20px;
+    color: #6e6c6c; 
+    transform: rotate(-6deg);
+    margin: 5px;   
+}
+.card:hover{
+    transform: scale(1.2) rotate(15deg);/* rotate绕中心旋转 */
+    /* 翻开阴影的大小改变 */
+    box-shadow: inset 20px 0 50px rgba(0, 0, 0, .5),0px 10px 100px rgba(0, 0, 0, .5)    
+}
+/* hover封面往左翻 */
+.card:hover .imgBox{
+    transform: rotateY(-135deg);
+}
+.card:hover .bark{
+    opacity: 1;
+    transition: 0.6s;
+}
+.card:hover .details{
+    opacity: 1;
+    transition: 0.6s;
+}
