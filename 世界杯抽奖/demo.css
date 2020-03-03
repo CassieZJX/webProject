@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow: hidden;
+    background: url('img/sjb.jpg') no-repeat;
+    background-size: 100%;
+}
+.count_down{
+    position: relative;
+    width: 750px;
+    height: 70px;
+    margin: 100px auto 0;
+    background: #fff;
+    font-size: 30px;
+    font-weight: 600;
+    color: #9d170c;
+    text-align: center;
+    vertical-align: middle;
+}
+.count_down p{
+    position: absolute;
+    line-height: 45px;
+    top: 13px;
+    left: 10px;
+    height: 45px;
+    font-weight: 600;
+}
+.count_down span{
+    position: absolute;
+    top: 13px;
+    width: 90px;
+    height: 45px;
+    /* border: 1px solid black; */
+    text-align: center;
+    font-weight: 600;
+    font-size: 38px;
+    box-shadow: 2px 3px 3px #c8c8c8 inset
+}
+.count_down .day{
+    left: 213px;
+}
+.count_down .hour{
+    left: 346px;
+}
+.count_down .minute{
+    right: 173px;
+}
+.count_down .second{
+    right: 42px;
+}
+.count_down b{
+    position: absolute;
+    line-height: 45px;
+    top: 13px;
+    height: 45px;
+}
+.count_down .b_one{
+    left: 309px;
+}
+.count_down .b_two{
+    left: 440px;
+}
+.count_down .b_three{
+    right: 140px;
+}
+.count_down .b_four{
+    right: 10px;
+}
+.box{
+    width: 80%;
+    max-width: 1000px;
+    margin: 15px auto 0px auto;
+    text-align: center;
+}
+.box::after{
+    display: block;
+    content: '';
+    clear: both;
+}
+.gdmd{
+    float: left;
+    width: 420px;
+    height: auto;
+    margin: 50px auto;
+    padding-left: 120px;
+}
+.gdmd p{
+    line-height: 80px;
+    text-align: center;
+    font-size: 50px;
+    color: #600510;
+}
+.gdmd span{
+    display: block;
+    width: 420px;
+    height: 80px;
+    line-height: 80px;
+    margin: 20px 0;
+    text-align: left;
+    font-size: 40px;
+    text-indent: 2rem;
+    background: #fff;
+}
+.zjmd{
+    float: left;
+    width: 300px;
+    height: 500px;
+    background: #fff;
+    margin-top: 30px;
+    margin-left: 30px;
+    overflow: hidden;
+}
+.zjmd .p1{
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+    padding: 0;
+}
+.zjmd .list p{
+    line-height: 30px;
+    text-align: left;
+    padding-left: 30px;
+}

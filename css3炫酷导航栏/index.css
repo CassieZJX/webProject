@@ -19,15 +19,15 @@ body{
     position: relative;
 }
 .menu li{
-    min-width: 67px;
+    min-width: 140px;
     background: linear-gradient(#3d3838,#999)
 }
 .menu a{
     display: block;
     color: #000;
     text-align: center;
-    padding: 0 10px;
-    font-size: 1rem;
+    padding: 0 25px;
+    font-size: 18px;
     line-height: 36px;
     border-left: 3px solid rgba(0, 0, 0, 0);
     text-transform: uppercase;

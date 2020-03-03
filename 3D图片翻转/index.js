@@ -59,5 +59,5 @@ function change(type) {
                 flag = true;
             })
         }
-    }, 100);
+    }, 1000);
 }

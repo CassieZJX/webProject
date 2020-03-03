@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    outline: none;
+}
+body{
+    background: #f8a499;
+}
+canvas{
+    background: #c9c;
+    display: block;
+    margin: 0 auto;
+    padding: 20px auto;
+    border: 1px solid #8f63cc;
+    margin-top: 10px;
+}
+.title{
+    color: #00c;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 30px;
+    background: #cfc;
+    width: 480px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.start{
+    color: #00c;
+    text-align: center;
+    font-size: 24px;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 100px;
+    background: #cfc;
+    cursor: pointer;
+}
+strong{
+    color: #00c;
+    text-align: center;
+    font-size: 24px;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 100px;
+    display: block;
+}

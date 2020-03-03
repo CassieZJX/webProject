@@ -1,0 +1,5 @@
+1.$符号不知到什么时候加，如 var self = this;写成 var self = $(this);   $===jQuery
+2.加了transform花朵却没有旋转，忘记加上transition: all 1s ease-in-out;
+3.背景图和人物图搞混，导致人物在底层未能显示
+4.js的38行Cannot read property 'sliderAuto' of undefined--->39行self.sliderAuto();
+5.一旦点击下一张，ppt变得很快，不止3秒

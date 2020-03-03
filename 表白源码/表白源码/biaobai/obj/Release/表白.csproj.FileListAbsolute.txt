@@ -1,0 +1,15 @@
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\biaobai\biaobai\obj\Release\MainWindow.g.cs
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\biaobai\biaobai\obj\Release\App.g.cs
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\biaobai\biaobai\obj\Release\MainWindow.baml
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\biaobai\biaobai\obj\Release\表白.csproj.GenerateResource.cache
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\biaobai\biaobai\obj\Release\表白.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\biaobai\biaobai\bin\Release\表白.exe.config
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\biaobai\biaobai\bin\Release\表白.exe
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\biaobai\biaobai\bin\Release\表白.pdb
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\biaobai\biaobai\obj\Release\表白_MarkupCompile.cache
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\biaobai\biaobai\obj\Release\表白_MarkupCompile.lref
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\biaobai\biaobai\obj\Release\表白.g.resources
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\biaobai\biaobai\obj\Release\表白.Properties.Resources.resources
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\biaobai\biaobai\obj\Release\表白.exe
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\biaobai\biaobai\obj\Release\表白.pdb
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\biaobai\biaobai\obj\Release\表白.csprojResolveAssemblyReference.cache

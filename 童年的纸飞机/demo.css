@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    background-image: gradient(radial, 50% 400, 1, 50% 400, 400, from(rgba(255, 255, 255, 0.3)) to(rgba(255, 255, 255, 0)));
+    background-repeat: no-repeat;
+    overflow: hidden;
+    transition: all 2s linear;
+}
+
+#wind {
+    width: 100%;
+    height: 100%;
+    perspective: 800;
+    perspective-origin: 50% 50%;
+}
+
+/* 定义初始输入框 */
+
+#plane {
+    width: 400px;
+    height: 260px;
+    background: rgba(255, 255, 255, 0.15);
+    *background: hsl(0, 0%, 88%);
+    transform: rotateY(-180deg);
+    position: relative;
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+    backface-visibility: hidden;
+    top: 240px;
+    transition: all 0.8s ease-in-out;
+    margin: auto;
+}
+
+#plane.front {
+    transform: rotateY(0deg);
+}
+
+.message {
+    width: 100%;
+    max-width: 360px;
+    height: 140px;
+    min-height: 100px;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+    -webkit-font-smoothing: subpixel-antialiased;
+    line-height: 20px;
+}
+
+.send {
+    transition: all 0.3s ease-in-out;
+    border: 2px solid hsl(194, 100%, 72%);
+    margin: 15px 0;
+    padding: 10px;
+    outline: none;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: hsl(0, 0%, 94%);
+    border-radius: 4px;
+}
+
+.send:active {
+    transform: scale(0.85);
+    transition: all 10ms ease-in-out;
+    background-color: hsl(0, 0%, 85%);
+    border: 2px solid hsl(194, 30%, 55%);
+}
+
+#plane_bottom {
+    position: absolute;
+    right: 7px;
+    bottom: 0;
+    width: 30px;
+    height: 30px;
+}
+
+#plane_close {
+    color: #fff;
+}
+
+/* 纸飞机 */
+
+#wind_container {
+    width: 400px;
+    height: 260px;
+    perspective: 600px;
+    perspective-origin: 200px 131px;
+    transform-style: preserve-3d;
+    transition: all 0.8s ease-in-out;
+    backface-visibility: hidden;
+    position: relative;
+    margin: auto;
+    /* background: green; */
+}
+
+#wind_container.beginning {
+    transform: rotateY(180deg);
+}
+
+#left-wing, #right_wing {
+    transform-style: preserve-3d;
+    width: 200px;
+    height: 260px;
+    display: block;
+    position: absolute;
+    top: 0;
+    transition: all 1s ease-in-out;
+}
+
+/* 区分左右 */
+
+#left-wing {
+    transform: rotateZ(0deg);
+    transform-origin: 100% 50% 0;
+    left: 0px;
+}
+
+#right-wing {
+    transform: rotateZ(0deg);
+    transform-origin: 0% 50%;
+    left: 199px;
+}
+.wing{
+    position: absolute;
+    transform-origin:0 0 0;
+    perspective: 1;
+    perspective-origin: 50% 50%;
+    transition: all 1.13s linear;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    border-right: 100px solid hsl(0, 0%, 88%);
+    border-bottom: 0px solid hsla(0, 0%, 0%, 0);
+    border-top: 240px solid hsla(0, 0%, 0%,0); 
+    width: 0;
+    height: 0;
+    bottom: 0;
+}
+
+/* 绘制2d飞机 雏形 */
+
+.wing1 {
+    transform-origin: 100% 100%;
+    transform: translateY(-38px) translateX(8px) rotateZ(22.62deg) skewY(-22.62deg);
+}
+
+.wing2 {
+    transform-origin: 100% 100%;
+    transform: rotateZ(22.62deg);
+    border-left: 100px solid hsl(0, 0%, 88%);
+    border-right: none;
+    left: 100px;
+}
+
+.wing3 {
+    transform-origin: 0% 100%;
+    transform: rotateZ(-22.62deg);
+    border-right: 100px solid hsl(0, 0, 88%);
+}
+
+.wing4 {
+    transform-origin: 0% 100%;
+    transform: translateY(-38px) translateX(8px) rotateZ(22.62deg) skewY(-22.62deg);
+    border-left: 100px solid hsl(0, 0%, 88%);
+    border-right: none;
+    left: 100px;
+}
+
+/* 绘制 被翻折部分 */
+
+.curvable {
+    transition: transform 800ms ease-in;
+    backface-visibility: hidden;
+    position: absolute;
+    background-color: transparent;
+    z-index: 0;
+    width: 0;
+}
+
+.curvable.top_left {
+    transform-origin: 100px 112px;
+    transition-delay: 1300ms;
+    width: 0;
+    height: 0;
+    border-right: 202px solid hsla(0, 0%, 0%, 0);
+    border-bottom: 202px solid hsla(0, 0%, 0%, 0);
+    border-top: 223px solid hsl(0, 0%, 88%);
+}
+
+.curvable.top_right {
+    right: 0;
+    border-right: 202px solid hsla(0, 0%, 0%, 0);
+    border-bottom: 202px solid hsla(0, 0%, 0%, 0);
+    border-top: 224px solid hsl(0, 0%, 88%);
+}
+.bottom_left.curvable{
+    transform-origin: 109px 0;
+    transition-delay:2100ms;
+    width: 109px;
+    height: 38px;
+    background: hsl(0, 0%, 88%);
+    bottom: 0;
+    left: 0; 
+}
+.bottom_right.curvable{
+    transform-origin: 0px 0;
+    transition-delay:2450ms;
+    width: 109px;
+    height: 38px;
+    background: hsl(0, 0%, 88%);
+    bottom: 0;
+    left: 0; 
+}
+.bottom_left.curvable::after{
+    position: absolute;
+    content: "";
+    border-right: 92px solid hsla(0, 0%, 0%, 0);
+    border-bottom: 39px solid hsla(0, 0%, 88%);
+    border-top: 37px solid hsla(0, 0%, 0%,0);
+    left: 109px;
+    bottom: 0;
+}
+.bottom_rightcurvable::after{
+    position: absolute;
+    content: "";
+    border-right: 92px solid hsla(0, 0%, 0%, 0);
+    border-bottom: 39px solid hsla(0, 0%, 88%);
+    border-top: 37px solid hsla(0, 0%, 0%,0);
+    left: -92px;
+    bottom: 0;
+}
+/* 折叠样式 */
+.top_left.curvable.curveb{
+    transform: rotate3d(1,-1.11,0,180deg);
+}
+.bottom_left.curvable.curveb{
+    transform: rotate3d(2.4867,1,0,-180deg);
+}
+.top_right.curvable.curveb{
+    transform: rotate3d(1,1,11,0,180deg);
+}
+.bottom_right.curvable.curveb{
+    transform: rotate3d(-2.4867,1,0,180deg);
+}
+#wind_container.hover{
+    transform: rotateX(54px) rotateY(-10deg) rotateZ(25deg);
+    transition-delay: 0.5s;
+}

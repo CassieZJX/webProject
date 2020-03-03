@@ -1,0 +1,14 @@
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\biaobai\biaobai\bin\Release\biaobai.exe.config
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\biaobai\biaobai\bin\Release\biaobai.exe
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\biaobai\biaobai\bin\Release\biaobai.pdb
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\biaobai\biaobai\obj\Release\MainWindow.g.cs
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\biaobai\biaobai\obj\Release\App.g.cs
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\biaobai\biaobai\obj\Release\biaobai_MarkupCompile.cache
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\biaobai\biaobai\obj\Release\biaobai_MarkupCompile.lref
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\biaobai\biaobai\obj\Release\MainWindow.baml
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\biaobai\biaobai\obj\Release\biaobai.g.resources
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\biaobai\biaobai\obj\Release\biaobai.Properties.Resources.resources
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\biaobai\biaobai\obj\Release\biaobai.csproj.GenerateResource.cache
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\biaobai\biaobai\obj\Release\biaobai.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\biaobai\biaobai\obj\Release\biaobai.exe
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\biaobai\biaobai\obj\Release\biaobai.pdb

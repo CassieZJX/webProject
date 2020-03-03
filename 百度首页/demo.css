@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.header{
+    height: 60px;
+    line-height: 60px;
+}
+.header .nav::after{
+    content: '';
+    clear: both;
+    display: block;
+}
+.header .nav li{
+    float:right;
+    margin-right: 20px;
+}
+.header .nav li a{
+    color: #333;
+    font-weight: 700;
+    font-size: 13px;
+}
+.header .nav li a:hover{
+    color: #00c;
+}
+.header .nav .more{
+    margin-left: 12px;
+}
+.header .nav .more a{
+    background-color: #38f;
+    color: #fff;
+    text-decoration: none; 
+    font-weight: normal;
+    padding: 4px;
+    
+}
+.header .nav .grey a{
+    font-weight: 100;
+   
+}
+/* search style */
+.search{
+    margin-top: 40px;
+}
+.search .logo{
+    text-align: center;
+}
+.search .logo img{
+    width: 270px;
+    height: 129px;
+}
+.search .keyWord{
+    margin-top: 20px;
+    text-align: center;
+}
+.search .keyWord form div{
+    display: inline-block;
+}
+.search .keyWord form .inpWrapper{
+    position: relative;
+    vertical-align: top;
+}
+.search .keyWord form .inpWrapper input{
+    width: 539px;
+    height: 34px;
+    padding-left: 5px;
+    border: 1px solid #b6b6b6;
+}
+.search .keyWord form .inpWrapper span{
+    position: absolute;
+    width: 18px;
+    height: 16px;
+    right: 10px;
+    top: 50%;
+    margin-top: -8px;
+    background-position: 0 0;
+    background-image: url('https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/soutu/img/camera_new_5606e8f.png');  
+}
+.search .keyWord form .inpWrapper span:hover{
+    background-position: 0 18px;
+    cursor: pointer;
+}
+.search .keyWord form .btnWrapper{
+    margin-left: -5px;
+}
+.search .keyWord form .btnWrapper input{
+    width: 100px;
+    height: 36px;
+    background: #3385ff;
+    color: #fff;
+    font-size: 15px;
+    border: none;
+}
+.info{
+    margin-top: 270px;
+    text-align: center;
+}
+.info .weixin img{
+    width: 60px;
+    height: 60px;
+}
+.info .weixin p{
+    margin-top: 4px;
+    font-weight: 600;
+    font-size: 12px;
+}
+.info .message{
+    margin-top: 15px;
+}
+.info .message .lineOne a{
+    color: #999;
+    font-size: 12px;
+    margin-left: 10px;
+}
+.info .message .lineTwo span,a{
+    color: #999;
+    font-size: 12px;
+    
+}

@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>淘宝网-淘！我喜欢</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -260,8 +261,46 @@
                             </div>
                             <div class="sort-center">
                                 <div class="recommended-up">
-                                    <div class="carousel">
+                                    <!-- <div class="carousel">
                                         <img src="./img/38女士节.PNG" alt="">
+                                    </div> -->
+                                    <div class="swiper-container">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide swiper-slide-center none-effect">
+                                                <a href="#">
+                                                    <img src="img/1.jpg">
+                                                </a>
+                                                <div class="layer-mask"></div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="#">
+                                                    <img src="img/2.jpg">
+                                                </a>
+                                                <div class="layer-mask"></div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="#">
+                                                    <img src="img/3.jpg">
+                                                </a>
+                                                <div class="layer-mask"></div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="#">
+                                                    <img src="img/4.jpg">
+                                                </a>
+                                                <div class="layer-mask"></div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="#">
+                                                    <img src="img/5.jpg">
+                                                </a>
+                                                <div class="layer-mask"></div>
+                                            </div>
+                                        </div>
+                                        <div class="button">
+                                            <div class="swiper-button-prev"></div>
+                                            <div class="swiper-button-next"></div>
+                                        </div>
                                     </div>
                                     <div class="recommended-down">
                                         <div class="tianmaologo">
@@ -401,5 +440,30 @@
         </div>
     </div>
 </body>
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<script type="text/javascript">
 
+	window.onload = function() {
+		var swiper = new Swiper('.swiper-container',{
+			autoplay: false,
+			speed: 1000,
+			autoplayDisableOnInteraction: false,
+			loop: true,
+			centeredSlides: true,
+			slidesPerView: 2,
+			pagination: '.swiper-pagination',
+			paginationClickable: true,
+			prevButton: '.swiper-button-prev',
+			nextButton: '.swiper-button-next',
+			onInit: function(swiper) {
+				swiper.slides[2].className = "swiper-slide swiper-slide-active";
+			},
+			breakpoints: {
+				668: {
+					slidesPerView: 1,
+				}
+			}
+		});
+	}
+</script>
 </html>

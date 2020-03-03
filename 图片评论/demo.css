@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+body{
+    background-color: #e3e3e3;
+}
+.wrapper{
+    width: 70%;
+    margin: 100px auto;
+    border: 1px solid #cecece;
+}
+.con{
+    width: 90%;
+    color: #333;
+    margin: 20px auto;
+    padding: 10px;
+}
+.photoBox{
+    width: 90%;
+    margin: 10px auto;
+}
+.photos{
+    height: 45px;
+}
+.photos li{
+    float: left;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #f2f2f2;
+    padding: 2px;
+    position: relative;
+    margin-right: 12px;
+}
+.photos img{
+    width: 40px;
+    height: 40px;
+    cursor: url('img/放大镜.svg'),auto;
+}
+.photos li span{
+    /* 实现下三角 */
+    width: 0px;
+    height: 0px;
+    border: 6px solid transparent;
+    border-top: 6px solid #ff236a;
+    position: absolute;
+    left: 15px;
+    bottom: -8px;    
+    opacity: 0;
+}
+.photoView{
+    width: 0;
+    height: 0;
+    margin-top: 10px;
+    position: relative;
+    background-color: #f2f2f2;
+    overflow: hidden;
+}
+.navL,
+.navR{
+    width: 40px;
+    display: block;
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+}
+.navL{
+    left: 0;
+}
+.navR{
+    right: 0;
+}
+.navL span,
+.navR span{
+    display:none;
+    font-size: 40px;
+    color: #ff236a;
+    position: absolute;
+    bottom: 0;
+}
+.photoBox .tm-current{
+    border: 2px solid #ff236a;
+    border-radius: 2px;
+}
+.photoBox .tm-current span{
+    bottom: -13px;    
+    opacity: 1;
+}
+.photoView,
+.photoView img,
+.photos .tm-current img{
+    cursor: url('img/放大镜sub.svg'),auto;
+}

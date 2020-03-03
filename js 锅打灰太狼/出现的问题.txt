@@ -1,0 +1,8 @@
+1.对jq对象和dom对象能使用的方法有点混淆
+  appendChild  removeChild  
+2.一直只出现在第一个洞里-->是==不是=
+if (num == rand) {
+        return;
+    };
+3.wolf.css为何不可
+ 设置狼随机出现位置时的left值和top值

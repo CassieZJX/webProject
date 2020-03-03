@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css3实现椭圆旋转加载效果</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background: #333;
+        }
+        .box{
+            position: fixed;
+            width: 200px;
+            height: 200px;
+            border: 5px solid #cb6341;
+            top: 50%;
+            left: 50%;
+            margin-left: -100px;
+            margin-top: -100px;
+        }
+        .box::after,.box::before{
+            position: absolute;
+            left: -19px;
+            top: -19px;
+            content: "";
+            /* 宽高放大20%使两个边框处于内部盒子之外 */
+            width: 120%;
+            height: 120%;
+            border: 2px solid;
+            box-sizing: border-box;
+            animation: boxBorder 6s linear infinite;
+        }
+        /* 上方边框比下方边框延迟3s执行 */
+        .box::before{
+            /* 允许负值，-3s使动画马上开始，但跳过3s进入动画 */
+            animation-delay: -3s;            
+        }
+        /* 外部两条蛇线 rect裁剪绝对定位的元素
+        rect(top,right,bottom,left) 若有overflow:visible该属性不起作用*/
+        @keyframes boxBorder {
+            0%{
+                border-color: #fff;
+                clip: rect(0,240px,2px,0);
+            }
+            25%{
+                border-color: #fff;
+                clip: rect(0,2px,240px,0);
+            }
+            50%{
+                border-color: yellow;
+                clip: rect(218px,240px,240px,0);
+            }
+            75%{
+                border-color: aqua;
+                clip: rect(0,240px,240px,218px);
+            }
+            100%{
+                border-color: blue;
+                clip: rect(0,240px,2px,0);
+            }
+        }
+        /* 盒子内部梅花操作 */
+        .box .icon{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: 50%;
+            left: 50%;
+            margin-top: -50px;
+            margin-left: -50px;
+            animation: iconBox 3s linear infinite;
+        }
+        @keyframes iconBox {
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+        .box .icon:after,.box .icon::before{
+            position: absolute;
+            content: "";
+            height: 100%;
+            width: 40%;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            top: 0;
+            left: 30px;
+            animation: iconBorder 3s linear infinite;/* 颜色 */
+        }
+        @keyframes iconBorder {
+            0%{
+                border-color: red;
+            }
+            30%{
+                border-color: yellow;
+            }
+            60%{
+                border-color: blue;
+            }
+            100%{
+                border-color: #fff;
+            }
+        }
+        /* 旋转堆叠出*形状 */
+        .box .icon1::after{
+            transform: rotate(60deg);
+        }
+        .box .icon1::before{
+            transform: rotate(-60deg);
+        }
+        .box .icon2::before{
+            transform: rotate(0deg);
+        }
+        /* 规定小圆球位置和形状 */
+        .box .icon2::after{
+            width: 10px;
+            height: 10px;
+            background: #fff;
+            border-radius: 50%;
+            transform: translate(13px,-6px);
+            animation: iconBall 3s linear infinite 0.3s;/* 颜色 */
+        }
+        @keyframes iconBall {
+            0%{
+                background-color: red;
+            }
+            30%{
+                background-color: yellow;
+            }
+            60%{
+                background-color: blue;
+            }
+            100%{
+                background-color: #fff;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="icon icon1"></div>
+        <div class="icon icon2"></div>
+    </div>
+</body>
+</html>

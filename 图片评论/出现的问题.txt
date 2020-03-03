@@ -1,0 +1,3 @@
+﻿1.忘记调用初始函数
+2.var flag=self.hasClass(activeClass);给activeClass加了引号导致flag为false跳不到正确代码
+3.var activeClass='tm-current';多加了点和少加了分号

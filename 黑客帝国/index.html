@@ -29,11 +29,13 @@
         var colunms=Math.floor(w/fontSize);
         // console.log(colunms);//51
         var drops=[];/* 数组用来存放canvas中文字的Y值 更新位置*/
+        console.log(drops);
         for(var i=0;i<colunms;i++){
-            drops.push(0);
+            drops.push(0);//规定初始时从页面最顶端下来
             // console.log(drops);
         }
         var str="CANVAS Javascript";
+        // var str="げゲごゴきゃキャき";
         draw();
         setInterval(draw,20);
         function draw(){
@@ -42,6 +44,7 @@
             ctx.fillRect(0,0,w,h);
             ctx.font="700 "+fontSize+"px 微软雅黑";/* 字体颜色 */
             ctx.fillStyle="#00cc33";
+            // ctx.fillStyle=randColor();
             //写入画布
             for(var i=0;i<colunms;i++){
                 var index=Math.floor(Math.random()*str.length);
@@ -50,12 +53,19 @@
                 // console.log(x,y);
                 // console.log(drops);
                 ctx.fillText(str[index],x,y);
-                if(y>=canvas.height&&Math.random()>0.99){
-                    drops[i]=0;
+                if(y>=canvas.height&&Math.random()>0.99){// 0.99的随机数造成列消失的时间不一致，产生的列也随之改变
+                    drops[i]=0;//超出高度回到起点
                     // console.log(drops)
                 }
+                // console.log(drops[i])
                 drops[i]++;
             }
+        }
+        function randColor(){
+            var r=Math.floor(Math.random()*256);
+            var g=Math.floor(Math.random()*256);
+            var b=Math.floor(Math.random()*256);
+            return "rgb("+r+","+g+","+b+")"
         }
     </script>
 </body>

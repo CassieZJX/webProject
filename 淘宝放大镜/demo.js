@@ -29,6 +29,7 @@ function bindEvent(){
     })
 }
 function move(e){
+    //  console.log(con.width())
      var minXl = (500 - imgW)/2;
      var maxXr = 500 - minXl - moveBoxW;
      var minYt = (500 - imgH)/2;

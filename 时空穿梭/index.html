@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>时空穿梭</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        canvas {
+            background: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="myCanvas"></canvas>
+    <script>
+        var myCanvas = document.getElementById('myCanvas');
+        var ctx = myCanvas.getContext('2d');
+        var w = window.innerWidth,
+            h = window.innerHeight;
+        var list = [];
+        init();
+        window.onresize = init;
+        function Star(x, y, r, disX, disY) {
+            this.x = x;
+            this.y = y;
+            this.r = r;
+            this.disX = disX;
+            this.disY = disY;
+        }
+        //创建所有的星星
+        for (var i = 0; i < 800; i++) {
+            var x = Math.random() * w,
+                y = Math.random() * h,
+                r = Math.random() * 2,
+                disX = x - w / 2,//移动距离
+                disY = y - h / 2;
+            list.push(new Star(x, y, r, disX, disY));
+        }
+        // console.log(list)
+        function init() {
+            myCanvas.width = w;
+            myCanvas.height = h;
+        }
+       
+        render();
+        function render() {
+            ctx.clearRect(0, 0, w, h);
+            for (var i = 0; i < list.length; i++) {
+                var item = list[i];
+                item.x += item.disX / 50;
+                item.y += item.disY / 50;
+                //判断小圆点消失
+                if (item.x < 0 || item.y < 0 || item.x > w || item.y > h) {
+                    item.x = Math.random() * w;
+                    item.y = Math.random() * h;
+                    item.disX = item.x - w / 2;
+                    item.disY = item.y - h / 2;
+                    // console.log(item)
+                }
+                //渲染小圆点
+                ctx.beginPath();
+                ctx.fillStyle = "#b200ff";
+                ctx.arc(item.x, item.y, item.r, 0, Math.PI * 2, false);
+                ctx.fill();
+            }
+            setTimeout(render, 40);
+        }
+    </script>
+</body>
+</html>

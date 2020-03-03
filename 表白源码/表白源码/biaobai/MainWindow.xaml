@@ -1,0 +1,19 @@
+﻿<Window x:Class="biaobai.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:biaobai"
+        mc:Ignorable="d"
+        
+        Title="来自爱慕你的小哥哥~" Height="258.697" Width="458.923" ResizeMode="NoResize" Background="#FF5EBCF1" Icon="Resources/cat3.jpg" WindowStartupLocation="CenterScreen">
+
+    <Grid Margin="0,0,18,3">
+        <Label Content="小姐姐，我观察你很久了~" HorizontalAlignment="Left" Height="44" Margin="20,20,0,0" VerticalAlignment="Top" Width="278" FontSize="20"/>
+        <Label Content="做我女朋友好不好？" HorizontalAlignment="Left" Height="61" Margin="20,69,0,0" VerticalAlignment="Top" Width="325" FontSize="36"/>
+        <Button Content="好~" HorizontalAlignment="Left" Height="63" Margin="74,135,0,0" VerticalAlignment="Top" Width="78" FontSize="24" Click="Button_Click" Background="#FF80DCFF"/>
+        <Button Content="不好~" HorizontalAlignment="Left" Height="63" Margin="202,135,0,0" VerticalAlignment="Top" Width="78" FontSize="24" Click="Button_Click_1" Background="#FF80DCFF"/>
+        <Image x:Name="image" Source="/Resources/cat1.jpg" Height="80" Margin="350,20,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="89"/>
+        <Image x:Name="image2" Source="/Resources/cat2.jpg" Height="80" Margin="350,120,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="89"/>
+    </Grid>
+</Window>

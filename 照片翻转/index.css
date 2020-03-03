@@ -1,0 +1,162 @@
+body{
+    background-color:#f1f1f1;
+}
+.wrapper{
+    max-width: 900px;
+    margin: 80px auto;
+    border: 1px solid black;
+}
+.wrapper li{
+    display: inline-block;
+    height: 180px;
+    width: 180px;
+    margin: 5px;
+    position: relative;
+    perspective: 300px;/* 透视 */
+}
+.picBox{
+    position: absolute;
+    height: 180px;
+    width: 180px;
+    transform-style: preserve-3d;
+    transform-origin: 50% 50% -90px;/* 立方体中心旋转 */
+    animation: 200ms ease-out 0ms 1 normal forwards;/* 执行时间  函数曲线 延迟时间 执行几次 是否倒着执行*/
+}
+.showImg{
+    height: 180px;
+    width: 180px;
+}
+.show,
+.hide{
+    position: absolute;/*脱离文档流*/
+    height: 180px;
+    width: 180px;
+}
+/* 设置文字样式 */
+.hide{
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    line-height: 180px;
+    transform: translate3d(0,0,-1px);/* 使文字在图片后面 */
+}
+.in-top .hide,
+.out-top .hide{
+    transform-origin: 0% 100%;/*设置基点位置*/
+    transform: translate3d(0,-100%,0) rotate3d(1,0,0,90deg);/* 先沿Y轴负反向100%再绕X轴方向旋转90度 */
+    
+}
+.in-top .picBox{
+    animation-name: in-top;/* 动画名 */
+    animation-play-state: running;/*动画状态*/
+}
+@keyframes in-top{
+    from{
+        transform:rotate3d(0,0,0,0deg);
+    }
+    to{
+        transform: rotate3d(-1,0,0,90deg);/* 向屏幕外面转 */
+    }
+}
+.out-top .picBox{
+    animation-name: out-top;/* 动画名 */
+    animation-play-state: running;/*动画状态*/
+}
+@keyframes out-top{
+    from{
+        transform:rotate3d(-1,0,0,90deg);
+    }
+    to{
+        transform: rotate3d(0,0,0,0deg);/* 向屏幕外面转 */
+    }
+}
+.in-right .hide,
+.out-right .hide{
+    transform-origin: 0% 0%;
+    transform: translate3d(100%,0,0) rotate3d(0,1,0,90deg);/* 先沿x轴正反向100%再绕y轴方向旋转90度 */
+    
+}
+.in-right .picBox{
+    animation-name: in-right;/* 动画名 */
+    animation-play-state: running;/*动画状态*/
+}
+@keyframes in-right{
+    from{
+        transform:rotate3d(0,0,0,0deg);
+    }
+    to{
+        transform: rotate3d(0,-1,0,90deg);/* 绕着Y轴 */
+    }
+}
+.out-right .picBox{
+    animation-name: out-right;/* 动画名 */
+    animation-play-state: running;/*动画状态*/
+}
+@keyframes out-right{
+    from{
+        transform: rotate3d(0,-1,0,90deg);
+    }
+    to{
+        transform: rotate3d(0,0,0,0deg);/* 向屏幕外面转 */
+    }
+}
+.in-bottom .hide,
+.out-bottom .hide{
+    transform-origin: 0% 0%;
+    transform: translate3d(0,100%,0) rotate3d(-1,0,0,90deg);/* 先沿y轴正反向下移100%再绕x轴反方向旋转90度 */
+    
+}
+.in-bottom .picBox{
+    animation-name: in-bottom;/* 动画名 */
+    animation-play-state: running;/*动画状态*/
+}
+@keyframes in-bottom{
+    from{
+        transform:rotate3d(0,0,0,0deg);
+    }
+    to{
+        transform: rotate3d(1,0,0,90deg);/* 向屏幕外面转 */
+    }
+}
+.out-bottom .picBox{
+    animation-name: out-bottom;/* 动画名 */
+    animation-play-state: running;/*动画状态*/
+}
+@keyframes out-bottom{
+    from{
+        transform:rotate3d(1,0,0,90deg);
+    }
+    to{
+        transform: rotate3d(0,0,0,0deg);/* 向屏幕外面转 */
+    }
+}
+.in-left .hide,
+.out-left .hide{
+    transform-origin: 100% 0;
+    transform: translate3d(-100%,0,0) rotate3d(0,-1,0,90deg);/*先沿X轴负方向100%再绕Y轴负方向旋转90度  */
+    
+}
+.in-left .picBox{
+    animation-name: in-left;/* 动画名 */
+    animation-play-state: running;/*动画状态*/
+}
+@keyframes in-left{
+    from{
+        transform: rotate3d(0,0,0,0deg);
+    }
+    to{
+        transform: rotate3d(0,1,0,90deg);
+    }
+}
+.out-left .picBox{
+    animation-name: out-left;/* 动画名 */
+    animation-play-state: running;/*动画状态*/
+}
+@keyframes out-left{
+    from{
+        transform: rotate3d(0,1,0,90deg);
+    }
+    to{
+        transform: rotate3d(0,0,0,0deg);/* 向屏幕外面转 */
+    }
+}
